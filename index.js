@@ -3,10 +3,10 @@ const http = require('http');
 var httpService = require('./request-handler');
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const PORT = process.env.PORT || 5000;
 
 const server = http.createServer(httpService.handleRequest);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(PORT, hostname, () => {
+  console.log(`Server running at http://${hostname}:${PORT}/`);
 });
